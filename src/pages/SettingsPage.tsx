@@ -7,7 +7,8 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import React from 'react';
-import { auth } from '../firebase';
+import { Link } from 'react-router-dom';
+// import { auth } from '../firebase';
 
 const SettingsPage: React.FC = () => {
   return (
@@ -19,9 +20,10 @@ const SettingsPage: React.FC = () => {
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton color="medium" expand="block"
-          onClick={() => auth.signOut()}>
-          Logout
+         >
+          Log Out
         </IonButton>
+        <Link to='/my/images'>Back to Home</Link>
       </IonContent>
     </IonPage>
   );

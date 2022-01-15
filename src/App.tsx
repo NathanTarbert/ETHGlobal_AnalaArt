@@ -1,44 +1,37 @@
-import {
-  IonApp,
-  IonIcon,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-} from '@ionic/react';
+import { IonApp } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { home as homeIcon, settings as settingsIcon } from 'ionicons/icons';
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import SettingsPage from './pages/SettingsPage';
+import React, { useState } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { AuthContext } from './auth';
+import AppTabs from './AppTabs';
+import LoginPage from './pages/LoginPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
-  return (
-    <IonApp>
-      <IonReactRouter>
-        <IonTabs>
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <HomePage />
-            </Route>
-            <Route exact path="/settings">
-              <SettingsPage />
-            </Route>
-            <Redirect exact path="/" to="/home" />
-          </IonRouterOutlet>
-          <IonTabBar slot="bottom">
-            <IonTabButton tab="home" href="/home">
-              <IonIcon icon={homeIcon} />              
-            </IonTabButton>
-            <IonTabButton tab="settings" href="/settings">
-              <IonIcon icon={settingsIcon} />             
-            </IonTabButton>
-          </IonTabBar>
-        </IonTabs>
-      </IonReactRouter>
-    </IonApp>
-  );
+	const [ loggedIn, setLoggedIn ] = useState(false);
+	console.log(`rendering App with loggedIn=${loggedIn}`); // this will let us know for testing purposes if the state changes
+
+	return (
+		<IonApp>
+			<AuthContext.Provider value={{ loggedIn }}>
+				<IonReactRouter>
+					<Switch>
+						<Route exact path="/login">
+							<LoginPage onLogin={() => setLoggedIn(true)} />
+						</Route>
+						<Route path="/my">
+							{/* <AppTabs loggedIn={loggedIn} /> */}
+							<AppTabs />
+						</Route>
+						<Redirect exact path="/" to="/my/images" />
+						<Route>
+							<NotFoundPage />
+						</Route>
+					</Switch>
+				</IonReactRouter>
+			</AuthContext.Provider>
+		</IonApp>
+	);
 };
 
 export default App;

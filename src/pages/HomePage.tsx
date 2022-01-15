@@ -1,9 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonImg, IonThumbnail, IonLabel } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonImg, IonThumbnail, IonLabel, IonRouterLink } from '@ionic/react';
   import { useState, useEffect } from 'react';
   import React from 'react';
+  // import './HomePage.css';
   import { firestore } from '../firebase';
   
-  const Home: React.FC = () => {
+  const HomePage: React.FC = () => {
     //import firestore entries into useState
     const [ images, setImages ] = useState([]);
   
@@ -27,17 +28,17 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem,
         </IonHeader>
         <IonContent className="ion-padding">
         <IonList>
-          {images.map((image) =>
-            <IonItem button key={image.id}
-              routerLink={`/home/${image.id}`}>
+          {images.map((image) => 
+            <IonItem className='items' button key={image.id} routerLink={`/my/images/${image.id}`}>
               <IonThumbnail slot="end">
-                <IonImg src={image.public_jpg} />
+                <IonImg className='image' src={image.public_jpg} />
               </IonThumbnail>
-              <IonLabel>
-                <h2>Likes {image.likes}</h2>
+              <IonLabel color="danger">
+                <h2 >Likes {image.likes}</h2>
                 <h2>Downloads {image.downloads}</h2>
                 <h2>Tags{image.tags}</h2>
               </IonLabel>
+              
             </IonItem>
           )}
         </IonList>
@@ -46,4 +47,4 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem,
     );
   };
   
-  export default Home;
+  export default HomePage;
