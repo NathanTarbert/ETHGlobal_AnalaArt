@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonImg, IonThumbnail, IonLabel } from '@ionic/react';
   import { useState, useEffect } from 'react';
   import React from 'react';
   import { firestore } from '../firebase';
@@ -15,21 +15,32 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem 
           ...image.data(),
         }));
         setImages(images);
+        console.log("images", images);
       })
     }, [])
     return (
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Araya Art</IonTitle>
+            <IonTitle>Anala Art</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-          <IonList>
-            {images.map((image) =>
-              <IonItem key={image.id}>{image.id}</IonItem>
-            )}
-          </IonList>
+        <IonList>
+          {images.map((image) =>
+            <IonItem button key={image.id}
+              routerLink={`/home/${image.id}`}>
+              <IonThumbnail slot="end">
+                <IonImg src={image.public_jpg} />
+              </IonThumbnail>
+              <IonLabel>
+                <h2>Likes {image.likes}</h2>
+                <h2>Downloads {image.downloads}</h2>
+                <h2>Tags{image.tags}</h2>
+              </IonLabel>
+            </IonItem>
+          )}
+        </IonList>
         </IonContent>
       </IonPage>
     );

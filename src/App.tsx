@@ -29,12 +29,10 @@ const App: React.FC = () => {
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
             <IonTabButton tab="home" href="/home">
-              <IonIcon icon={homeIcon} />
-              
+              <IonIcon icon={homeIcon} />              
             </IonTabButton>
             <IonTabButton tab="settings" href="/settings">
-              <IonIcon icon={settingsIcon} />
-             
+              <IonIcon icon={settingsIcon} />             
             </IonTabButton>
           </IonTabBar>
         </IonTabs>
