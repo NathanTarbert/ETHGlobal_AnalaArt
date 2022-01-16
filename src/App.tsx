@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
-	const [ loggedIn, setLoggedIn ] = useState(false);
+	const [ loggedIn, setLoggedIn ] = useState(true);
 	console.log(`rendering App with loggedIn=${loggedIn}`); // this will let us know for testing purposes if the state changes
 
 	return (
