@@ -1,6 +1,6 @@
 {
-  "appId": "org.example.dailymoments",
-  "appName": "Daily Moments",
+  "appId": "com.GZeroDev.AnalaArt",
+  "appName": "Anala Art",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
