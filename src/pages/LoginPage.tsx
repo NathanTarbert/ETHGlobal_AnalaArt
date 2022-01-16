@@ -23,10 +23,10 @@ import {
           return <Redirect to='/my/images' />
       }
     return (
-      <IonPage>
+      <IonPage className='login-page'>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Login</IonTitle>
+            <IonTitle className='title'>Login</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">

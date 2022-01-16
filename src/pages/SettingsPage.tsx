@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom';
 
 const SettingsPage: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage className='settings-page'>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Settings</IonTitle>
+        <IonToolbar >
+          <IonTitle className='title'>Settings</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

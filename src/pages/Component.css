@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.home-page .title {
+    font-size: 32px;
+   font-family: 'Satisfy', cursive;
+   background-color: rgb(238, 234, 234);
+}
+
+.entry-page .title {
+    font-size: 32px;
+   font-family: 'Satisfy', cursive;
+   background-color: rgb(238, 234, 234);
+}
+
+.entry-page .content {
+    
+}
+
+.settings-page .title {
+    background-color: rgb(238, 234, 234); 
+    font-size: 20px;   
+}
+
+.login-page .title {
+    background-color: rgb(238, 234, 234); 
+    font-size: 20px;   
+}
