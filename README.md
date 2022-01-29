@@ -1,5 +1,10 @@
 # Anala Art
 
+https://showcase.ethglobal.com/nfthack2022/anala-art
+
+![image](https://user-images.githubusercontent.com/66887028/151673592-b27f6072-2358-41fa-850f-dc5815621ef4.png)
+
+
 This is a cross platform mobile app created in Ionic-React by a husband and wife paired programming team: Nathan and Faith Tarbert. 
 
 Anala Art consists of a free, curated collection of ORIGINAL (never been uploaded online), analog mixed media art images. In art, analog means created/painted by hand, not digitally created. These images are then scanned in as hi-res, digital wallpapers. The user can view the collection and download any image(s), sized for their device, as a free wallpaper. 
