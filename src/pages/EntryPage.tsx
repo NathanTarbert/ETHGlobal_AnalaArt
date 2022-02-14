@@ -35,7 +35,7 @@ const EntryPage: React.FC = () => {
 
 	// console.log('img', jpg)
 	if (!image) {
-		throw new Error(`No such image: ${id}`);
+		throw new Error(`No such image: ${id}`);//throw error if no image
 	}
 	return (
 		<IonPage className='entry-page'>
